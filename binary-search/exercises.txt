@@ -1,0 +1,11 @@
+Exercices
+
+1.1 Suppose you have a sorted list of 128 names, and you are searching through it using binary search.
+What is the maximum number of steps it would take?
+
+- log2(128) = 7
+
+1.2 Suppose you double the sixe of the list. 
+What is the maximum number of steps now?
+
+- log2(256) = 8
