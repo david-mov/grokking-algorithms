@@ -1,0 +1,7 @@
+Exercises
+
+2.1 Suppose you’re building an app to keep track of your finances.
+Every day, you write down everything you spent money on. At the end of the month, you review your expenses and sum up how much you spent. So, you have lots of inserts and a few reads. 
+Should you use an array or a list?
+
+- You should use a list, because although its runtime for reading is O(n), for insertion it is O(1) and you will do insertions every day and reads only once a month. (Algorithm in example-1)
