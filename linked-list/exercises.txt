@@ -1,0 +1,38 @@
+Exercises
+
+2.1 Suppose you’re building an app to keep track of your finances.
+Every day, you write down everything you spent money on. At the end of the month, you review your expenses and sum up how much you spent. So, you have lots of inserts and a few reads. 
+Should you use an array or a list?
+
+- You should use a list, because although its runtime for reading is O(n), for insertion it is O(1) and you will do insertions every day and reads only once a month. (Algorithm in example-1)
+
+2.2 Suppose you're building an app for restaurants to take customer orders. Your app needs to store a list of orders. 
+Servers keep adding orders to this list, and chefs take orders off the list and make them. 
+It's an order queue: servers add orders to the back of the queue, and the chef takes the first order off the queue and cooks it.
+Would you use an array or a linked list to implement this queue?
+
+- You should use a linked list, because the application needs to do a lot of insertions and deletions and does not need random access.
+
+2.3 Let's run a thought experiment. Suppose Facebook keeps a list of usernames. 
+When someone tries to log in to Facebook, a search is done for their username. If their name is in the list of usernames, they can log in.
+People log in to Facebook pretty often, so there are a lor of searches through this list of usernames.
+Supposee Facebook uses binary search to search the list. Binary search needs random access; you need to be able to get to the middle of the list of usernames instantly.
+Knowing whis, would you implement the list as an array or a linked list?
+
+- Using an array is the best choice because this structure is better than a linked list for random access.
+
+2.4 People sign up for Facebook pretty often, too. 
+Suppose you decided to use an array to store the list of users. What are the downsides of an array for inserts?
+In particular, suppose you're using binary search to search for logins. What happens when you add new users to an array?
+
+- If you want to add a new element to an array and it already occuped all its consecutive spaces, the whole array have to be moved to a place in the memory heap with more space.
+
+2.5 In reality, Facebook uses neither an array nor a linked list to store user information. Let's consider a hybrid data structure: an array of linked lists.
+You have an array with 26 slots. Each slot points to a list containing all the usernames starting with a. The second slot points to a linked list containing all the usernames starting with b, and so on.
+Suppose Adit B sign up for Facebook, and you want to add them to the list. You go to slot 1 in the array, go to the linked list for slot 1, and add Adit B at the end.
+Now, suppose you want to search for Zakhir H. You go to slot 26, which points to a linked list of all the Z names. Then you search through that list to find Zakhir H.
+Compare this hybrid data structure to arrays and linked lists. 
+Is it slower or faster than each for searching and inserting? You don't have to give Big O run times, just wheter the new data structure would be faster or slower.
+
+- In both cases, you can use the random access boundary of arrays to reach the linked list by its letter. After, you have to traverse the list looking for the element or directly insert a new one.
+The advantage of this data structure is its capability to divide the elements alphabetically and random acess by letter, but avoiding the problem that the arrays have. I think it would be faster.
