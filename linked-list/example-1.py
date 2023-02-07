@@ -7,10 +7,10 @@ class SinglyLinkedList:
 	def __init__(self, head = None):
 		self.head = head
 
-	def addFirst(self, value):
+	def add_first(self, value):
 		self.head = ListNode(value, self.head)
 
-	def traverse(self, cb):
+	def for_each(self, cb):
 		pointer = self.head
 		while pointer:
 			cb(pointer.value)
@@ -18,8 +18,8 @@ class SinglyLinkedList:
 
 list = SinglyLinkedList()
 
-list.addFirst('groceries')
-list.addFirst('movie')
-list.addFirst('sfbc membership')
+list.add_first('groceries')
+list.add_first('movie')
+list.add_first('sfbc membership')
 
-list.traverse(print)
+list.for_each(print)
