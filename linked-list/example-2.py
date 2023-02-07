@@ -49,6 +49,6 @@ list.add_last('order one')
 list.add_last('order two')
 list.add_last('otder three')
 
-list.remove_last()
+list.remove_first()
 
 list.for_each(print)
