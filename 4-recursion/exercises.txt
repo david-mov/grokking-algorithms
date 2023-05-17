@@ -10,5 +10,9 @@ Exercises
 
 4.3 Find the maximum number in a list
 
+- Algorithm in example-3.py
+
 4.4 Remember any binary search from chapter 1? It's a divide-and-conquer algorithm, too. 
 Can you come up with the base case and recursive case for the binary search?
+
+- Algorithm in example-4.py
