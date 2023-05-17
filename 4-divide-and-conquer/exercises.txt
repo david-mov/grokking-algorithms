@@ -2,7 +2,11 @@ Exercises
 
 4.1 Write out the code for the sum function showed in the chapter
 
+- Algorithm in example-1.py
+
 4.2 Write a recursive function to count the number of items in a list
+
+- Algorithm in example-2.py
 
 4.3 Find the maximum number in a list
 
