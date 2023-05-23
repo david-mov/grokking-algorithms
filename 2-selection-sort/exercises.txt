@@ -4,14 +4,14 @@ Exercises
 Every day, you write down everything you spent money on. At the end of the month, you review your expenses and sum up how much you spent. So, you have lots of inserts and a few reads. 
 Should you use an array or a list?
 
-- You should use a list, because although its runtime for reading is O(n), for insertion it is O(1) and you will do insertions every day and reads only once a month. (Algorithm in example-1.py)
+- You should use a list, because although its runtime for reading is O(n), for insertion it is O(1) and you will do insertions every day and reads only once a month. (Algorithm in linked-list-1.py)
 
 2.2 Suppose you're building an app for restaurants to take customer orders. Your app needs to store a list of orders. 
 Servers keep adding orders to this list, and chefs take orders off the list and make them. 
 It's an order queue: servers add orders to the back of the queue, and the chef takes the first order off the queue and cooks it.
 Would you use an array or a linked list to implement this queue?
 
-- You should use a linked list, because the application needs to do a lot of insertions and deletions and does not need random access. (Algorithm in example-2.py)
+- You should use a linked list, because the application needs to do a lot of insertions and deletions and does not need random access. (Algorithm in linked-list-2.py)
 
 2.3 Let's run a thought experiment. Suppose Facebook keeps a list of usernames. 
 When someone tries to log in to Facebook, a search is done for their username. If their name is in the list of usernames, they can log in.
