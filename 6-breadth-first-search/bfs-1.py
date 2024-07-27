@@ -16,7 +16,6 @@ def bfs(graph, start, target):
     while searchlist:
         current = searchlist[0]
         if current == target:
-            print(visited)
             return True
         
         visited.append(current)
