@@ -10,21 +10,23 @@ network = {
 }
 
 def bfs(graph, start, target):
-    searchlist = graph[start].copy()
+    searchlist = [start]
     visited = [start]
+
+    if start == target: return True
 
     while searchlist:
         current = searchlist[0]
-        if current == target:
-            return True
-        
-        visited.append(current)
 
         for neighbour in graph[current]:
             if neighbour not in visited:
                 searchlist.append(neighbour)
+                visited.append(neighbour)
+                if neighbour == target:
+                    return True
         
         searchlist.pop(0)
+    return False
 
 print( bfs(network, 'you', 'anuj') )
 # This algorithm shows how to solve the problem: "Is there a path from A to B?"
