@@ -12,12 +12,25 @@ def dijkstra(graph, start, target):
     parents = {}
     processed = []
 
+    current_parent = start
     current = graph[start]
-
-    cheapest = (None, -1)
-    for neighbour, cost in current.keys():
-        costs[neighbour] = cost # what if it had a previous cost?
-
-        if cost < cheapest[1]:
-            cheapest = (neighbour, cost)
+    
+    nodes_qty = len(graph.keys())
+    while len(processed) != nodes_qty-1:
+        cheapest = None
+        cheapest_cost = -1
+        for neighbour, cost in current.items():
+            
+            if neighbour not in processed:
+                processed.append(neighbour)
+                costs[neighbour] = cost
+                parents[neighbour] = None #current?
+                
+    
+            if cost < cheapest_cost:
+                cheapest = neighbour
+                cheapest_cost = cost
+                
+            current =  graph[cheapest]
+            current_parent = cheapest
     
