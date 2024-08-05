@@ -7,30 +7,34 @@ trades = {
     "piano": {}
 }
 
-def dijkstra(graph, start, target):
-    costs = {}
-    parents = {}
-    processed = []
+infinity = float('inf')
 
-    current_parent = start
-    current = graph[start]
+def dijkstra(graph, start, target):
+    nodes = graph.keys()
+    costs = dict.fromkeys(nodes, infinity)
+    costs[start] = 0
+    parents = {}
+    processed = [start]
+
+    current = start
     
-    nodes_qty = len(graph.keys())
-    while len(processed) != nodes_qty-1:
+    while len(processed) < len(nodes):
+        processed.append(current)
         cheapest = None
-        cheapest_cost = -1
-        for neighbour, cost in current.items():
-            
+        cheapest_cost = infinity
+        for neighbour, cost in graph[current].items():
             if neighbour not in processed:
-                processed.append(neighbour)
-                costs[neighbour] = cost
-                parents[neighbour] = None #current?
                 
-    
+                new_cost = costs[current] + cost
+                if new_cost < costs[neighbour]:
+                    costs[neighbour] = new_cost
+                    parents[neighbour] = current
+            
             if cost < cheapest_cost:
                 cheapest = neighbour
                 cheapest_cost = cost
                 
-            current =  graph[cheapest]
-            current_parent = cheapest
-    
+        current = cheapest # make a pending list to process neighbours from cheapest to most expensive
+    return costs
+        
+print( dijkstra(trades, "book", "piano") )
