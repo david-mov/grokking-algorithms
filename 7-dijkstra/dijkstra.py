@@ -1,4 +1,4 @@
-trtrades = {
+trades = {
     "book": {"lp": 5, "poster": 0},
     "lp": {"guitar": 15, "drum": 20},
     "poster": {"guitar": 30, "drum": 35},
