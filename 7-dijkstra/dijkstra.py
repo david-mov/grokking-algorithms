@@ -19,7 +19,7 @@ def cheapest_node(costs, processed):
                     cheapest_cost = cost
         return cheapest
 
-def create_path(graph, start, target):
+def create_path(graph, start):
     current = start
     path = []
     while current:
@@ -37,7 +37,7 @@ def dijkstra(graph, start, target):
     current = start
     while len(processed) < len(nodes):
         if current == target:
-            return (costs[target], create_path(parents, target, start))
+            return (costs[target], create_path(parents, target))
         
         processed.append(current)
         
@@ -51,6 +51,6 @@ def dijkstra(graph, start, target):
         
         current = cheapest_node(costs, processed)
         
-    return (costs[target], create_path(parents, target, start))
+    return (costs[target], create_path(parents, target))
         
 print( dijkstra(trades, "book", "piano") )
